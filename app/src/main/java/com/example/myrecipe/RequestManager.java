@@ -2,6 +2,8 @@ package com.example.myrecipe;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
+
 import com.example.myrecipe.Listeners.DetailsListener;
 import com.example.myrecipe.Listeners.RecipeResponseListener;
 import com.example.myrecipe.Models.DetailsResponce;
@@ -35,7 +37,7 @@ public class RequestManager {
                 context.getString(R.string.api_key), 5, tags);
         call.enqueue(new Callback<RecipeResponse>() {
             @Override
-            public void onResponse(Call<RecipeResponse> call, Response<RecipeResponse> response) {
+            public void onResponse(@NonNull Call<RecipeResponse> call, @NonNull Response<RecipeResponse> response) {
                 if (!response.isSuccessful()) {
                     listener.didError(response.message());
                     return;
@@ -44,7 +46,7 @@ public class RequestManager {
             }
 
             @Override
-            public void onFailure(Call<RecipeResponse> call, Throwable t) {
+            public void onFailure(@NonNull Call<RecipeResponse> call, @NonNull Throwable t) {
                 listener.didError(t.getMessage());
 
             }
@@ -56,7 +58,7 @@ public class RequestManager {
         Call<DetailsResponce> call = callRecipeDetail.callDetails(id, context.getString(R.string.api_key));
         call.enqueue(new Callback<DetailsResponce>() {
             @Override
-            public void onResponse(Call<DetailsResponce> call, Response<DetailsResponce> response) {
+            public void onResponse(@NonNull Call<DetailsResponce> call, @NonNull Response<DetailsResponce> response) {
                 if (!response.isSuccessful()) {
                     listener.didError(response.message());
                     return;
@@ -65,7 +67,7 @@ public class RequestManager {
             }
 
             @Override
-            public void onFailure(Call<DetailsResponce> call, Throwable t) {
+            public void onFailure(@NonNull Call<DetailsResponce> call, @NonNull Throwable t) {
                 listener.didError(t.getMessage());
             }
         });

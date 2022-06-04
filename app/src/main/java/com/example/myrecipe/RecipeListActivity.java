@@ -1,6 +1,7 @@
 package com.example.myrecipe;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,6 +29,7 @@ public class RecipeListActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     Spinner spinner;
     List<String> tags = new ArrayList<>();
+    SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,17 +40,33 @@ public class RecipeListActivity extends AppCompatActivity {
         dialog.setTitle(R.string.loading_message);
 
         spinner = findViewById(R.id.spinner_tag);
-        ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(
+        ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.tags,
                 R.layout.spinner_text
         );
-
         arrayAdapter.setDropDownViewResource(R.layout.spinner_input_text);
         spinner.setAdapter(arrayAdapter);
         spinner.setOnItemSelectedListener(spinnerSelectedListener);
 
         manager = new RequestManager(this);
+
+        searchView = findViewById(R.id.searchView);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                tags.clear();
+                tags.add(query);
+                manager.getRandomRecipes(recipeResponseListener, tags);
+                dialog.show();
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
     }
 
     private final RecipeResponseListener recipeResponseListener = new RecipeResponseListener() {

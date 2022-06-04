@@ -1,0 +1,225 @@
+@startuml
+
+title __MYRECIPE.APP's Class Diagram__\n
+
+  namespace com.example.myrecipe {
+    namespace Adapters {
+      class com.example.myrecipe.Adapters.IngredientsAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Adapters {
+      class com.example.myrecipe.Adapters.IngredientsViewHolder {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Adapters {
+      class com.example.myrecipe.Adapters.RandomRecipeAdapter {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Adapters {
+      class com.example.myrecipe.Adapters.RandomRecipeViewHolder {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    class com.example.myrecipe.BuildConfig {
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    class com.example.myrecipe.DetailsActivity {
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Listeners {
+      interface com.example.myrecipe.Listeners.DetailsListener {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Listeners {
+      interface com.example.myrecipe.Listeners.RandomRecipeResponseListener {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Listeners {
+      interface com.example.myrecipe.Listeners.RecipeClickListener {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    class com.example.myrecipe.MainActivity {
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Models {
+      class com.example.myrecipe.Models.AnalyzedInstruction {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Models {
+      class com.example.myrecipe.Models.DetailsResponce {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Models {
+      class com.example.myrecipe.Models.Equipment {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Models {
+      class com.example.myrecipe.Models.ExtendedIngredient {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Models {
+      class com.example.myrecipe.Models.Ingredient {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Models {
+      class com.example.myrecipe.Models.Length {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Models {
+      class com.example.myrecipe.Models.Measures {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Models {
+      class com.example.myrecipe.Models.Metric {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Models {
+      class com.example.myrecipe.Models.ProductMatch {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Models {
+      class com.example.myrecipe.Models.RandomRecipeApiResponse {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Models {
+      class com.example.myrecipe.Models.Recipe {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Models {
+      class com.example.myrecipe.Models.Step {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Models {
+      class com.example.myrecipe.Models.Us {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    namespace Models {
+      class com.example.myrecipe.Models.WinePairing {
+      }
+    }
+  }
+  
+
+  namespace com.example.myrecipe {
+    class com.example.myrecipe.RequestManager {
+    }
+  }
+  
+
+  com.example.myrecipe.Adapters.IngredientsAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.example.myrecipe.Adapters.IngredientsViewHolder -up-|> androidx.recyclerview.widget.RecyclerView.ViewHolder
+  com.example.myrecipe.Adapters.RandomRecipeAdapter -up-|> androidx.recyclerview.widget.RecyclerView.Adapter
+  com.example.myrecipe.Adapters.RandomRecipeAdapter o-- com.example.myrecipe.Listeners.RecipeClickListener : listener
+  com.example.myrecipe.Adapters.RandomRecipeViewHolder -up-|> androidx.recyclerview.widget.RecyclerView.ViewHolder
+  com.example.myrecipe.DetailsActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.myrecipe.DetailsActivity o-- com.example.myrecipe.Adapters.IngredientsAdapter : ingredientsAdapter
+  com.example.myrecipe.DetailsActivity o-- com.example.myrecipe.RequestManager : manager
+  com.example.myrecipe.DetailsActivity o-- com.example.myrecipe.Listeners.DetailsListener : details_listener
+  com.example.myrecipe.MainActivity -up-|> androidx.appcompat.app.AppCompatActivity
+  com.example.myrecipe.MainActivity o-- com.example.myrecipe.RequestManager : manager
+  com.example.myrecipe.MainActivity o-- com.example.myrecipe.Adapters.RandomRecipeAdapter : randomRecipeAdapter
+  com.example.myrecipe.MainActivity o-- com.example.myrecipe.Listeners.RandomRecipeResponseListener : randomRecipeResponseListener
+  com.example.myrecipe.MainActivity o-- com.example.myrecipe.Listeners.RecipeClickListener : recipeClickListener
+  com.example.myrecipe.Models.DetailsResponce o-- com.example.myrecipe.Models.WinePairing : winePairing
+  com.example.myrecipe.Models.ExtendedIngredient o-- com.example.myrecipe.Models.Measures : measures
+  com.example.myrecipe.Models.Measures o-- com.example.myrecipe.Models.Metric : metric
+  com.example.myrecipe.Models.Measures o-- com.example.myrecipe.Models.Us : us
+  com.example.myrecipe.Models.Step o-- com.example.myrecipe.Models.Length : length
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

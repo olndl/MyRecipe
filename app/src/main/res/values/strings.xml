@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">MyRecipe</string>
+    <string name="api_key">3c592787241a4669804f7d512aedfae5</string>
+    <string name="instructions">Instructions</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="loading_message">Loading…</string>
+    <string name="portion">" Portions"</string>
+    <string name="like">" Likes"</string>
+    <string name="minutes">" Minutes"</string>
+    <string-array name="tags">
+        <item>main course</item>
+        <item>side dish</item>
+        <item>dessert</item>
+        <item>salad</item>
+        <item>bread</item>
+        <item>breakfast</item>
+        <item>soup</item>
+        <item>beverage</item>
+        <item>sauce</item>
+        <item>marinade</item>
+        <item>fingerfood</item>
+        <item>snack</item>
+        <item>drink</item>
+    </string-array>
+</resources>
+

@@ -1,5 +1,5 @@
 ## MyRecipe
-Android application that fetches and displays recipes from [spoonacular API](https://spoonacular.com/food-api). 
+Android application that fetches and displays random recipes from [spoonacular API](https://spoonacular.com/food-api). 
 ### Features:
 - List of 5 random dishes (with previews)
 - Search dish by name

@@ -8,7 +8,7 @@
         <entry key="app/src/main/res/drawable/ic_portion.xml" value="0.224" />
         <entry key="app/src/main/res/layout/activity_details.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18911174785100288" />
-        <entry key="app/src/main/res/layout/activity_recipe.xml" value="0.12411347517730496" />
+        <entry key="app/src/main/res/layout/activity_recipe.xml" value="0.1" />
         <entry key="app/src/main/res/layout/card_recipe.xml" value="0.22" />
         <entry key="app/src/main/res/layout/ingredients.xml" value="0.1" />
         <entry key="app/src/main/res/layout/list_random_recipe.xml" value="0.1" />
@@ -24,6 +24,13 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="SuppressABINotification">
+    <option name="modulesWithSuppressedNotConfigured">
+      <set>
+        <option value="MyRecipe.app" />
+      </set>
+    </option>
   </component>
   <component name="VisualizationToolProject">
     <option name="state">
